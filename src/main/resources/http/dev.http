@@ -1,0 +1,88 @@
+### Get all performances
+GET http://localhost:7070/api/performances
+Accept: application/json
+
+###
+
+### Get a performance by id
+GET http://localhost:7070/api/performances/2
+Accept: application/json
+
+###
+
+### Create a new performance (actor will be added later)
+POST http://localhost:7070/api/performances
+Content-Type: application/json
+
+{
+  "title": "Phantom of the Theater",
+  "startTime": "2025-05-10T19:00:00",
+  "endTime": "2025-05-10T21:00:00",
+  "latitude": 55.7,
+  "longitude": 12.6,
+  "ticketPrice": 220,
+  "genre": "MUSICAL"
+}
+
+###
+
+### Update a performance
+PUT http://localhost:7070/api/performances/7
+Content-Type: application/json
+
+{
+  "title": "Phantom of the Theater (Updated)",
+  "startTime": "2025-05-10T20:00:00",
+  "endTime": "2025-05-10T22:30:00",
+  "latitude": 55.7,
+  "longitude": 12.6,
+  "ticketPrice": 250,
+  "genre": "MUSICAL"
+}
+
+###
+
+### Delete a performance
+DELETE http://localhost:7070/api/performances/2
+
+###
+
+### Add an actor to a performance
+PUT http://localhost:7070/api/performances/1/actors/3
+
+###
+
+### Get performances by actor
+GET http://localhost:7070/api/performances/actor/3
+
+###
+
+### Filtered by genre
+GET http://localhost:7070/api/performances/genre/comedy
+
+###
+
+### Get total revenue per actor
+GET http://localhost:7070/api/performances/actor-revenue
+
+###
+
+### Get props for a specific performance by id
+GET http://localhost:7070/api/performances/1/props
+
+###
+
+### Get total prop cost estimate for a performance
+GET http://localhost:7070/api/performances/1/props/total-cost
+
+###
+
+### Get all info including props for the preformanse
+GET http://localhost:7070/api/performances/1/with-props
+
+
+###
+
+### Populate the database
+### WILL WIPE DB AND REMAKE IT FROM SCRATCH
+POST http://localhost:7070/api/performances/populate
